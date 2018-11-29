@@ -3,7 +3,7 @@ import NavLink from './NavLink'
 
 export default React.createClass({
   contextTypes: {
-    router: React.PropTypes.object
+    router: React.PropTypes.object //接收上下文传递的router对象
   },
 
   handleSubmit(event) {
@@ -11,7 +11,7 @@ export default React.createClass({
     const userName = event.target.elements[0].value
     const repo = event.target.elements[1].value
     const path = `/repos/${userName}/${repo}`
-    this.context.router.push(path)
+    this.context.router.push(path) //手动跳转路由，与使用Link组建一样的触发规则
   },
 
   render() {

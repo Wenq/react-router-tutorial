@@ -7,6 +7,8 @@ import Repos from './modules/Repos'
 import Repo from './modules/Repo'
 import Home from './modules/Home'
 
+//historyApiFallback:	在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
+
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>

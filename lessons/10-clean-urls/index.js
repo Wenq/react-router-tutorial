@@ -1,14 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute, useRouterHistory } from 'react-router'
 import App from './modules/App'
 import About from './modules/About'
 import Repos from './modules/Repos'
 import Repo from './modules/Repo'
 import Home from './modules/Home'
+import { createHashHistory } from 'history'
+
+//react router去除url中的k参数
+var appHistory = useRouterHistory(createHashHistory)({queryKey:false});
 
 render((
-  <Router history={hashHistory}>
+  <Router history={appHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="/repos" component={Repos}>
